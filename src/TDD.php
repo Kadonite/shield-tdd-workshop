@@ -12,6 +12,7 @@ class TDD
      * @var array
      */
     private $matches = [
+        'IX' => 9,
         'IV' => 4,
         'V' => 5,
         'I' => 1,

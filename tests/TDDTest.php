@@ -30,6 +30,10 @@ final class TDDTest extends TestCase
             [4, 'IV'],
             [5, 'V'],
             [9, 'IX'],
+            [10, 'X'],
+            [11, 'XI'],
+            [49, 'IL'],
+            [45, 'XLV'],
         ];
     }
 }
