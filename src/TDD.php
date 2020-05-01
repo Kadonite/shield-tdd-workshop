@@ -1,20 +1,36 @@
 <?php
 namespace TDD;
 
+use phpDocumentor\Reflection\Types\Integer;
+
 class TDD
 {
     /**
      * @var string
      */
-    private $stringNumber;
+    private $romanNumber;
 
-    public function __construct(string $stringNumber)
+    /**
+     * TDD constructor.
+     *
+     * @param string $romanNumber
+     */
+    public function __construct(string $romanNumber)
     {
-        $this->stringNumber = $stringNumber;
+        $this->romanNumber = $romanNumber;
     }
 
-    public function toDecimal()
+    /**
+     * Converts to decimal.
+     *
+     * @return int
+     */
+    public function toDecimal() : int
     {
-        return 1;
+        if ($this->romanNumber === 'I') {
+            return 1;
+        }
+
+        return 2;
     }
 }

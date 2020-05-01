@@ -5,17 +5,28 @@ use TDD\TDD;
 
 final class TDDTest extends TestCase
 {
-    public function testNumberOne()
+    /**
+     * @param int $expected
+     * @param string $romanNumber
+     * @dataProvider romanNumbers
+     */
+    public function testRomanToDecimals($expected, $romanNumber)
     {
-        $romanNumerals = new TDD('I');
+        $romanNumerals = new TDD($romanNumber);
 
-        return $this->assertEquals(1, $romanNumerals->toDecimal());
+        return $this->assertEquals($expected, $romanNumerals->toDecimal());
+
     }
 
-    public function testNumberTwo()
+    /**
+     * @return array
+     */
+    public function romanNumbers()
     {
-        $romanNumerals = new TDD('II');
-
-        return $this->assertEquals(2, $romanNumerals->toDecimal());
+        return [
+            [1, 'I'],
+            [2, 'II'],
+            [3, 'III'],
+        ];
     }
 }
