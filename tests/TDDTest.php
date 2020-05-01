@@ -34,6 +34,16 @@ final class TDDTest extends TestCase
             [11, 'XI'],
             [49, 'IL'],
             [45, 'XLV'],
+            [100, 'C'],
+            [99, 'IC'],
+            [90, 'XC'],
+            [87, 'LXXXVII'],
+            [98, 'XCVIII'],
+            [1000, 'M'],
+            [999, 'IM'],
+            [992, 'XMII'],
+            [950, 'CML'],
+            [900, 'CM'],
         ];
     }
 }
