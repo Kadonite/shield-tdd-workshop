@@ -5,10 +5,10 @@ use TDD\TDD;
 
 final class TDDTest extends TestCase
 {
-    public function testTrue()
+    public function testNumberOne()
     {
-        $TDD = new TDD();
-        $this->assertTrue($TDD->returnTrue());
+        $romanNumerals = new TDD('I');
+
+        return $this->assertEquals(1, $romanNumerals->toDecimal());
     }
 }
-
