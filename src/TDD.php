@@ -1,8 +1,6 @@
 <?php
 namespace TDD;
 
-use phpDocumentor\Reflection\Types\Integer;
-
 class TDD
 {
     /**
@@ -15,8 +13,7 @@ class TDD
      */
     private $matches = [
         'IV' => 4,
-        'III' => 3,
-        'II' => 2,
+        'V' => 5,
         'I' => 1,
     ];
 
@@ -40,12 +37,12 @@ class TDD
         $result = 0;
 
         foreach ($this->matches as $match => $value) {
-            if (strpos($this->romanNumber, $match) !== false) {
-                $result += $this->matches[$match];
-                $this->romanNumber = str_replace($match, '', $this->romanNumber);
+            while (strpos($this->romanNumber, $match) === 0) {
+                $result += $value;
+                $this->romanNumber = substr($this->romanNumber, strlen($match));
             }
         }
-
         return $result;
     }
 }
+
