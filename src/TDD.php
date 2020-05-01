@@ -11,6 +11,16 @@ class TDD
     private $romanNumber;
 
     /**
+     * @var array
+     */
+    private $matches = [
+        'IV' => 4,
+        'III' => 3,
+        'II' => 2,
+        'I' => 1,
+    ];
+
+    /**
      * TDD constructor.
      *
      * @param string $romanNumber
@@ -27,13 +37,15 @@ class TDD
      */
     public function toDecimal() : int
     {
-        if ($this->romanNumber === 'I') {
-            return 1;
-        }
-        if ($this->romanNumber === 'II') {
-            return 2;
+        $result = 0;
+
+        foreach ($this->matches as $match => $value) {
+            if (strpos($this->romanNumber, $match) !== false) {
+                $result += $this->matches[$match];
+                $this->romanNumber = str_replace($match, '', $this->romanNumber);
+            }
         }
 
-        return 3;
+        return $result;
     }
 }
