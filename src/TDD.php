@@ -30,7 +30,10 @@ class TDD
         if ($this->romanNumber === 'I') {
             return 1;
         }
+        if ($this->romanNumber === 'II') {
+            return 2;
+        }
 
-        return 2;
+        return 3;
     }
 }
