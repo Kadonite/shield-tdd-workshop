@@ -3,8 +3,18 @@ namespace TDD;
 
 class TDD
 {
-    public function returnTrue(): bool
+    /**
+     * @var string
+     */
+    private $stringNumber;
+
+    public function __construct(string $stringNumber)
     {
-        return true;
+        $this->stringNumber = $stringNumber;
+    }
+
+    public function toDecimal()
+    {
+        return 1;
     }
 }

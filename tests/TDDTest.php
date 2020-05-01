@@ -11,4 +11,11 @@ final class TDDTest extends TestCase
 
         return $this->assertEquals(1, $romanNumerals->toDecimal());
     }
+
+    public function testNumberTwo()
+    {
+        $romanNumerals = new TDD('II');
+
+        return $this->assertEquals(2, $romanNumerals->toDecimal());
+    }
 }
